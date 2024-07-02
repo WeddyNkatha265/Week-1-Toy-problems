@@ -1,1 +1,23 @@
+function calculateDemeritPoints(speed) {
+  const speedLimit = 70;
+  const kmPerPoint = 5;
+
+  if (speed < speedLimit) {
+    return "Ok";
+  } else {
+    const excessSpeed = speed - speedLimit;
+    const demeritPoints = Math.floor(excessSpeed / kmPerPoint);
+
+    if (demeritPoints > 12) {
+      return "License suspended";
+    } else {
+      return `Points: ${demeritPoints}`;
+    }
+  }
+}
+
+// Example usage:
+const carSpeed = parseFloat(prompt("Enter the car's speed (km/h):"));
+const result = calculateDemeritPoints(carSpeed);
+console.log(result);
 
