@@ -1,1 +1,26 @@
+// Get user input (basic salary and benefits)
+const basicSalary = parseFloat(prompt("Enter basic salary:"));
+const benefits = parseFloat(prompt("Enter additional benefits:"));
+
+// Calculate gross salary
+const grossSalary = basicSalary + benefits;
+
+// Calculate deductions (use actual rates from KRA, NHIF, and NSSF)
+const taxRate = 0.2; // Actual tax rate (e.g., 20%)
+const nhifDeduction = 500; // Actual NHIF contribution
+const nssfRate = 0.05; // Actual NSSF rate (e.g., 5% of basic salary)
+
+const payee = taxRate * grossSalary;
+const nssfDeduction = nssfRate * basicSalary;
+
+// Calculate net salary
+const netSalary = grossSalary - (payee + nhifDeduction + nssfDeduction);
+
+// Display results
+console.log(`Gross Salary: KES ${grossSalary.toFixed(2)}`);
+console.log(`Payee (Tax): KES ${payee.toFixed(2)}`);
+console.log(`NHIF Deductions: KES ${nhifDeduction.toFixed(2)}`);
+console.log(`NSSF Deductions: KES ${nssfDeduction.toFixed(2)}`);
+console.log(`Net Salary: KES ${netSalary.toFixed(2)}`);
+
 
