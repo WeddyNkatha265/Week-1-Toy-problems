@@ -1,1 +1,23 @@
-Challenge 1: Student Grade Generator (Toy Problem)
+function calculateGrade(mark) {
+  if (mark >= 0 && mark <= 100) {
+    if (mark > 79) {
+      return "A";
+    } else if (mark >= 60) {
+      return "B";
+    } else if (mark >= 50) {
+      return "C";
+    } else if (mark >= 40) {
+      return "D";
+    } else {
+      return "E";
+    }
+  } else {
+    return "Invalid input. Please enter a mark between 0 and 100.";
+  }
+}
+
+// Example usage:
+const userMark = parseFloat(prompt("Enter the student's mark (0-100):"));
+const userGrade = calculateGrade(userMark);
+console.log(`The student's grade is: ${userGrade}`);
+
